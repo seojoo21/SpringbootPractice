@@ -15,6 +15,7 @@ public interface CustomerRepository extends CrudRepository<Customer, Integer> {
 	List<Customer> findByNameOrAddress(String name, String address);
 	
 //	@Query("", nativeQuery=true) // true=표준 SQL , false=JPQL
+// 쿼리문 사용에 차이가 있다. 
 	
 	@Query("from Customer where name =?1 and address = ?2") //JPQL
  	List<Customer> findVipList(String value1, String value2);
